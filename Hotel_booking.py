@@ -70,7 +70,6 @@ def main():
         driver.switch_to.window(tabs[1])
 
         wait_and_click(driver, By.XPATH, "(//a[@class='fill-btn ng-tns-c3739152123-2'])[1]")
-        print("sdhfvhadgsay")
         # Price before applying coupon
         price_before_elem = wait.until(EC.presence_of_element_located(
             (By.XPATH, "(//div[@class='hotelRvw_box3 ng-tns-c2179837240-4 ng-star-inserted'])[1]")))
@@ -93,7 +92,7 @@ def main():
         else:
             logging.warning(f"❌ Discount not applied as expected. Expected: ₹{expected_price}, Got: ₹{after_price}")
 
-        logging.info("✅ Script completed. Closing browser in 10 seconds...")
+        logging.info("Script completed. Closing browser in 10 seconds...")
         time.sleep(10)
 
     except Exception as e:
