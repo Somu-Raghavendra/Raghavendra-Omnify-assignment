@@ -56,7 +56,6 @@ def main():
         wait_and_click(driver, By.XPATH, "//div[@class='hp_inputBox selectHtlCity']")
         city_input = wait.until(EC.presence_of_element_located((By.ID, "txtCity")))
         city_input.send_keys("New York, United States Of America")
-        city_input.send_keys(Keys.RETURN)
 
         # Select Dates
         wait_and_click(driver, By.XPATH, "(//div[@class='hp_inputBox ht-dates'])[1]")
@@ -95,7 +94,7 @@ def main():
         else:
             logging.warning(f"❌ Discount not applied as expected. Expected: ₹{expected_price}, Got: ₹{after_price}")
 
-        logging.info("✅ Script completed. Closing browser in 10 seconds...")
+        logging.info("Script completed. Closing browser in 10 seconds...")
         time.sleep(10)
 
     except Exception as e:
